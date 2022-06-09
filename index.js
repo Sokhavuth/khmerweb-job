@@ -6,11 +6,11 @@ const app = express()
 
 const port = process.env.PORT || 8000
 
-import mydb from './model/conMongoDB.js'
+//import mydb from './model/conMongoDB.js'
 import indexRoute from './route/index.js'
 
 app.use('/',async function(req,res,next){
-    req.mydb = await mydb
+    //req.mydb = await mydb
     next()
 })
 
