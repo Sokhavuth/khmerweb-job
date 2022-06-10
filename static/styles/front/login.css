@@ -1,0 +1,32 @@
+/* static/styles/front/login.css */
+.Login{
+    width: 400px;
+    margin: 100px auto 0; 
+}
+
+.Login .title{
+    background: var(--background);
+    text-align: center;
+    font: 20px/1.5 Oswald, Limonf3;
+    padding: 5px;
+    
+}
+
+.Login form{
+    background: #4d4d64;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-gap: 5px;
+    align-items: center;
+}
+
+.Login form a{
+    color: white;
+    text-align: right;
+}
+
+.Login form input{
+    padding: 2px 5px;
+    font: var(--body-font);
+}
