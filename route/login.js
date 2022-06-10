@@ -7,4 +7,9 @@ loginRoute.get('/login',async (req,res,next)=>{
     module.default(req,res)
 })
 
+loginRoute.post('/login',async (req,res,next)=>{
+    const module = await import('../controller/login/postLogin.js')
+    module.default(req,res)
+})
+
 export default loginRoute
