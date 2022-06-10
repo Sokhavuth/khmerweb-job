@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs'
 export default async (req,res)=>{
     let module = await import('../../config.js')
     let setting = await module.default()
+    setting.pageTitle = 'ទំព័រ​ចុះ​ឈ្មោះ'
 
     let user = await checkUser(req)
       
