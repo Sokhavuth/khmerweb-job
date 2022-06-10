@@ -1,1 +1,1 @@
-import app from '../index.js'
+const app = require('../index.js')
