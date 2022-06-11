@@ -1,0 +1,30 @@
+/* static/styles/admin/index.css */
+.Header{
+    background: var(--background-dark);
+    border-bottom: 7px solid white;
+}
+
+.Header .menu{
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.Header .logo{
+    font: 26px/1.5 Oswald, Limonf3;
+}
+
+.Header form{
+    display: grid;
+    grid-template-columns: 20% auto 20%;
+}
+
+.Header form input, .Header form select{
+    font: var(--body-font);
+    padding: 2px 5px 2px 10px;
+}
+
+.Header .logout{
+    text-align: right;
+}

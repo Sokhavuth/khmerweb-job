@@ -1,4 +1,16 @@
 <!--view/admin/index.ejs-->
 <link rel="stylesheet" href="/styles/admin/index.css" />
 
-Admin Page
+<section class="Header">
+    <div class="menu region">
+        <div class="logo"><%= data.pageTitle %></div>
+        <form>
+            <select name="adminSearch">
+                <option>ការងារ</option>
+            </select>
+            <input type="text" name="q" required placeholder="Search" />
+            <input type="submit" value="ស្វែង​រក" />
+        </form>
+        <div class="logout"><a href="/">ទំព័រ​មុខ</a> | <a href="/logout">ចេញ​ក្រៅ</a></div>
+    </div>
+</section>
