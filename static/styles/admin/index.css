@@ -2,6 +2,7 @@
 .Header{
     background: var(--background-dark);
     border-bottom: 7px solid white;
+    margin-bottom: 20px;
 }
 
 .Header .menu{
@@ -27,4 +28,53 @@
 
 .Header .logout{
     text-align: right;
+}
+
+.Main .main{
+    display: grid;
+    grid-template-columns: 25% auto;
+}
+
+.Main .main .sidebar{
+    background: var(--background);
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.Main .main .sidebar .wrapper{
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 15px;
+    align-items: center;
+    height: 380px;
+}
+
+.Main .main .sidebar .wrapper a{
+    font: 20px/1.5 Oswald, Bayon;
+}
+
+.Main .main .sidebar .wrapper a img{
+    width: 100%;
+}
+
+.Footer{
+    padding-top: 10px;
+}
+
+.Footer .footer .info{
+    text-align: center;
+    background: var(--background);
+    padding: 10px;
+}
+
+.Footer .paginate{
+    text-align: center;
+    background: var(--background);
+    margin: 10px 0 20px;
+    padding: 5px 0 0;
+}
+
+.Footer .paginate img:hover{
+    cursor: pointer;
+    opacity: .7;
 }

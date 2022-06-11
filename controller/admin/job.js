@@ -11,6 +11,7 @@ class Job{
     getItem(req,res){
         this.config.pageTitle = 'ទំព័រ​ការងារ'
         this.config.route = '/admin/job'
+        this.config.type = 'job'
 
         res.render('base',{data: this.config})
     }
