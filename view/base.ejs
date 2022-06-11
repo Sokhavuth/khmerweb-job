@@ -15,6 +15,8 @@
             <%- include('front/home.ejs') %>
         <% }else if(data.route === '/login'){ %>
             <%- include('front/login.ejs') %>
+        <% }else if(data.route.includes('/admin')){ %>
+            <%- include('admin/index.ejs') %>
         <% } %>
     </body>
 </html>

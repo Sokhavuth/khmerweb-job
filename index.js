@@ -33,7 +33,9 @@ app.use(express.urlencoded({extended:false}))
 import indexRoute from './route/index.js'
 app.use('/',indexRoute)
 import loginRoute from './route/login.js'
-app.use('/',loginRoute)
+app.use('/login',loginRoute)
+import adminRoute from './route/admin.js'
+app.use('/admin',adminRoute)
 
 const port = process.env.PORT || 8000
 app.listen(port, () => {

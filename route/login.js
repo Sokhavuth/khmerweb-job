@@ -2,7 +2,7 @@
 import express from 'express'
 const loginRoute = express.Router()
 
-loginRoute.get('/login',async (req,res,next)=>{
+loginRoute.get('/',async (req,res,next)=>{
     if(req.session.user){
         res.redirect('/admin/job')
     }else{
@@ -11,7 +11,7 @@ loginRoute.get('/login',async (req,res,next)=>{
     }
 })
 
-loginRoute.post('/login',async (req,res,next)=>{
+loginRoute.post('/',async (req,res,next)=>{
     const module = await import('../controller/login/postLogin.js')
     module.default(req,res)
 })
