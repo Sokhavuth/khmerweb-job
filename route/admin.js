@@ -1,14 +1,11 @@
 //route/admin.js
 import express from 'express'
-const jobRoute = express.Router()
-import job from '../controller/admin/job.js'
+const adminRoute = express.Router()
 
-jobRoute.get('/job',async (req,res,next)=>{
-    if(req.session.user){
-        job.getItem(req,res)
-    }else{
-        res.redirect('/login')
-    }
-})
+import jobRoute from './admin/job.js'
+adminRoute.use('/job',jobRoute)
 
-export default jobRoute
+import categoryRoute from './admin/category.js'
+adminRoute.use('/category',categoryRoute)
+
+export default adminRoute

@@ -36,7 +36,9 @@
             </div>
         </div>
         <div class="content">
-            
+            <% if(data.route === '/admin/category'){ %>
+                <%- include('category.ejs') %>
+            <% } %>
         </div>
     </div>
 </section>
