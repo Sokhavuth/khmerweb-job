@@ -16,4 +16,13 @@ loginRoute.post('/',async (req,res,next)=>{
     module.default(req,res)
 })
 
+loginRoute.get('/logout',async (req,res,next)=>{
+    if(req.session.user){
+        req.session.destroy()
+        res.redirect('/')
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default loginRoute

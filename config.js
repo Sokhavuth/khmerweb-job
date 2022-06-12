@@ -5,7 +5,8 @@ export default async ()=>{
         siteTitle: 'ការងារ​យើង',
         pageTitle: '',
         route: '',
-        message: ''
+        message: '',
+        maxPosts: 10,
     }
 
     return config

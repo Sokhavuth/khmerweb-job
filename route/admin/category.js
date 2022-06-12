@@ -11,4 +11,12 @@ categoryRoute.get('/',async (req,res,next) => {
     }
 })
 
+categoryRoute.post('/',async (req,res,next) => {
+    if(req.session.user){
+        category.postItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default categoryRoute
