@@ -3,7 +3,7 @@
 
 <section class="Category">
     <div class='content'>
-        <% if('item' in data){ %>
+        <% if(data.item){ %>
         <form action='/admin/category/edit/<%= data.item.id %>' method='post' >
             <a>ឈ្មោះជំពូកៈ</a><input type='text' value="<%= data.item.title %>" name='title' required />
             <a>រូបសញ្ញាៈ</a><input type='text' value="<%= data.item.thumb %>" name='thumb' required />
