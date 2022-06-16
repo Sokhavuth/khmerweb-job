@@ -1,0 +1,21 @@
+<!--view/admin/job.ejs-->
+<link rel="stylesheet" href="/styles/admin/job.css" />
+<script src="/scripts/ckeditor/ckeditor.js"></script>
+
+<section class="Job">
+    <form action="/admin/job" method="post">
+        <input type="text" name="title" required placeholder="ចំណង​ជើង" />
+        <textarea name="content" id="editor">​​​​​​​​​​​​​​</textarea>
+        <input type="text" name="categories" required placeholder="ជំពូក" />
+        <div class="wrapper">
+            <select name="category" required>
+                <option>test</option>
+            </select>
+            <input type="text" name="location" required placeholder="ទីកន្លែង" />
+            <input type="datetime-local" name="datetime" required />
+            <input type="email" name="email" required placeholder="Email" />
+            <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
+        </div>
+    </form>
+</section>
+<script src="/scripts/ckeditor/config.js"></script>

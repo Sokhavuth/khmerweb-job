@@ -1,0 +1,16 @@
+/* static/styles/admin/job.css */
+.Job form .ck-editor__editable{
+    min-height: 300px;
+    color: black;
+}
+
+.Job form input,.Job form select{
+    width: 100%;
+    font: var(--body-font);
+    padding: 5px 10px;
+}
+
+.Job form .wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
