@@ -1,5 +1,6 @@
 // controller/admin/job.js
 import config from '../../config.js'
+import categories from '../../model/category.js'
 
 class Job{
     constructor(){
@@ -8,10 +9,12 @@ class Job{
         })()
     }
 
-    getItem(req,res){
+    async getItem(req,res){
         this.config.pageTitle = 'ទំព័រ​ការងារ'
         this.config.route = '/admin/job'
         this.config.type = 'job'
+
+        this.config.categories = await categories.getAllItem(req)
 
         res.render('base',{data: this.config})
     }

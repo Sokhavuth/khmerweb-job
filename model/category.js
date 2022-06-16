@@ -22,6 +22,10 @@ class Category{
         return await req.mydb.collection("categories").find().sort({date:-1,_id:-1}).limit(amount).toArray()
     }
 
+    async getAllItem(req){
+        return await req.mydb.collection("categories").find().sort({title:1}).toArray()
+    }
+
     async getEditItem(req){
         return await req.mydb.collection("categories").findOne({id:req.params.id})
     }
