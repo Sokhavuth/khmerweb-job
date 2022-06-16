@@ -11,4 +11,12 @@ jobRoute.get('/',async (req,res,next)=>{
     }
 })
 
+jobRoute.post('/',async (req,res,next)=>{
+    if(req.session.user){
+        job.postItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default jobRoute

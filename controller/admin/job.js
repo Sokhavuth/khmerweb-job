@@ -1,6 +1,7 @@
 // controller/admin/job.js
 import config from '../../config.js'
 import categories from '../../model/category.js'
+import job from '../../model/job.js'
 
 class Job{
     constructor(){
@@ -17,6 +18,12 @@ class Job{
         this.config.categories = await categories.getAllItem(req)
 
         res.render('base',{data: this.config})
+    }
+
+    async postItem(req,res){
+        await job.insertItem(req)
+
+        res.redirect('/admin/job')
     }
 }
 

@@ -6,7 +6,7 @@
 <section class="Job">
     <form action="/admin/job" method="post">
         <input type="text" name="title" required placeholder="ចំណង​ជើង" />
-        <textarea name="content" id="editor">​​​​​​​​​​​​​​</textarea>
+        <textarea name="content" id="editor"></textarea>
         <input type="text" name="categories" required placeholder="ជំពូក" />
         <div class="wrapper">
             <select id="category" onChange="getCategory()">
@@ -15,9 +15,12 @@
                     <option><%= data.categories[v].title %></option>
                 <% } %>
             </select>
-            <input type="text" name="location" required placeholder="ទីកន្លែង" />
-            <input type="datetime-local" name="datetime" required />
+            <input type="text" name="payable" required placeholder="ប្រាក់​ឈ្នួល" />
             <input type="email" name="email" required placeholder="Email" />
+            <input type="text" name="website" placeholder="គេហទំព័រ" />
+            <input type="text" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
+            <input type="text" name="location" required placeholder="ទីកន្លែង" />
+            <input type="datetime-local" name="closedate" required />
             <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
         </div>
     </form>
