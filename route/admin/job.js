@@ -43,4 +43,12 @@ jobRoute.get('/delete/:id',async (req,res,next)=>{
     }
 })
 
+jobRoute.post('/paginate',async (req,res,next)=>{
+    if(req.session.user){
+        job.paginateItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default jobRoute

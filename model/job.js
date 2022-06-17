@@ -55,6 +55,11 @@ class Job{
         const myquery = {id:req.params.id}
         await req.mydb.collection("jobs").deleteOne(myquery)
     }
+
+    async paginateItem(req,amount){
+        const page = req.body.page
+        return await req.mydb.collection("jobs").find().sort({date:-1,_id:-1}).skip(amount*page).limit(amount).toArray()
+    }
 }
 
 export default new Job()

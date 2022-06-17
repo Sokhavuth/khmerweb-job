@@ -52,6 +52,15 @@ class Job{
         res.redirect('/admin/job')
     }
 
+    async paginateItem(req,res){
+        this.config.route = '/admin/job'
+        this.config.type = 'job'
+
+        this.config.items = await jobDB.paginateItem(req,this.config.maxPosts)
+
+        res.json(this.config)
+    }
+
 }
 
 export default await new Job()
