@@ -35,4 +35,12 @@ jobRoute.post('/edit/:id',async (req,res,next)=>{
     }
 })
 
+jobRoute.get('/delete/:id',async (req,res,next)=>{
+    if(req.session.user){
+        job.deleteItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default jobRoute

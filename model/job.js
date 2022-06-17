@@ -49,7 +49,11 @@ class Job{
         }}
  
         await req.mydb.collection("jobs").updateOne(myquery,newvalue)
+    }
 
+    async deleteItem(req){
+        const myquery = {id:req.params.id}
+        await req.mydb.collection("jobs").deleteOne(myquery)
     }
 }
 

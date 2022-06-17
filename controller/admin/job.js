@@ -46,6 +46,12 @@ class Job{
         res.redirect('/admin/job')
     }
 
+    async deleteItem(req,res){
+        await jobDB.deleteItem(req)
+
+        res.redirect('/admin/job')
+    }
+
 }
 
 export default await new Job()
