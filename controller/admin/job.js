@@ -26,6 +26,19 @@ class Job{
 
         res.redirect('/admin/job')
     }
+
+    async editItem(req,res){
+        this.config.pageTitle = 'ទំព័រ​កែប្រែការងារ'
+        this.config.route = '/admin/job'
+        this.config.type = 'job'
+
+        this.config.categories = await categories.getAllItem(req)
+        this.config.items = await job.getItem(req,this.config.maxPosts)
+        this.config.count = await job.count(req)
+        this.config.item = await job.getSingleItem(req)
+        
+        res.render('base',{data: this.config})
+    }
 }
 
 export default await new Job()

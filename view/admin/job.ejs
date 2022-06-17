@@ -4,10 +4,11 @@
 <script src="/scripts/addCategory.js"></script>
 
 <section class="Job">
-    <form action="/admin/job" method="post">
-        <input type="text" name="title" required placeholder="ចំណង​ជើង" />
-        <textarea name="content" id="editor"></textarea>
-        <input type="text" name="categories" required placeholder="ជំពូក" />
+    <% if(data.item){ %>
+    <form action="/admin/job/edit/<%= data.item.id %>" method="post">
+        <input type="text" name="title" value="<%= data.item.title %>" required placeholder="ចំណង​ជើង" />
+        <textarea name="content" id="editor"><%= data.item.content %></textarea>
+        <input type="text" name="categories" value="<%= data.item.categories %>" required placeholder="ជំពូក" />
         <div class="wrapper">
             <select id="category" onChange="getCategory()">
                 <option>ជ្រើសរើស​ជំពូក</option>
@@ -15,14 +16,36 @@
                     <option><%= data.categories[v].title %></option>
                 <% } %>
             </select>
-            <input type="text" name="payable" required placeholder="ប្រាក់​ឈ្នួល" />
-            <input type="email" name="email" required placeholder="Email" />
-            <input type="text" name="website" placeholder="គេហទំព័រ" />
-            <input type="text" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
-            <input type="text" name="location" required placeholder="ទីកន្លែង" />
-            <input type="datetime-local" name="closedate" required />
+            <input type="text" value="<%= data.item.payable %>" name="payable" required placeholder="ប្រាក់​ឈ្នួល" />
+            <input type="email" value="<%= data.item.email %>" name="email" required placeholder="Email" />
+            <input type="text" value="<%= data.item.website %>" name="website" placeholder="គេហទំព័រ" />
+            <input type="text" value="<%= data.item.thumb %>" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
+            <input type="text" value="<%= data.item.location %>" name="location" required placeholder="ទីកន្លែង" />
+            <input type="datetime-local" value="<%= data.item.closedate %>" name="closedate" required />
             <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
         </div>
     </form>
+    <% }else{ %>
+        <form action="/admin/job" method="post">
+            <input type="text" name="title" required placeholder="ចំណង​ជើង" />
+            <textarea name="content" id="editor"></textarea>
+            <input type="text" name="categories" required placeholder="ជំពូក" />
+            <div class="wrapper">
+                <select id="category" onChange="getCategory()">
+                    <option>ជ្រើសរើស​ជំពូក</option>
+                    <% for(let v in data.categories){ %>
+                        <option><%= data.categories[v].title %></option>
+                    <% } %>
+                </select>
+                <input type="text" name="payable" required placeholder="ប្រាក់​ឈ្នួល" />
+                <input type="email" name="email" required placeholder="Email" />
+                <input type="text" name="website" placeholder="គេហទំព័រ" />
+                <input type="text" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
+                <input type="text" name="location" required placeholder="ទីកន្លែង" />
+                <input type="datetime-local" name="closedate" required />
+                <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
+            </div>
+        </form>
+    <% } %>
 </section>
 <script src="/scripts/ckeditor/config.js"></script>
