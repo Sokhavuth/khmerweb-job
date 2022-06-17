@@ -25,6 +25,10 @@ class Job{
  
         await req.mydb.collection("jobs").insertOne(newJob)
     }
+
+    async getItem(req,amount){
+        return await req.mydb.collection('jobs').find().sort({data: -1,_id: -1}).limit(amount).toArray()
+    }
 }
 
 export default new Job()

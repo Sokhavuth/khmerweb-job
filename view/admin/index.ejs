@@ -62,7 +62,7 @@
                 </div>
                 <div class="title">
                     <a href="/<%= data.type %>/<%= item.id %>"><%= item.title %></a>
-                    <div><%= (new Date(item.date)).toLocaleDateString('it-IT') %></div>
+                    <div><%= (new Date(item.postdate)).toLocaleDateString('it-IT') %></div>
                 </div>
                 <div class="edit">
                     <a href="<%= data.route %>/edit/<%= item.id %>"><img src="/images/edit.png"/></a>

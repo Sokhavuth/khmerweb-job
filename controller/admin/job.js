@@ -16,7 +16,8 @@ class Job{
         this.config.type = 'job'
 
         this.config.categories = await categories.getAllItem(req)
-
+        this.config.items = await job.getItem(req,this.config.maxPosts)
+        this.config.count = await job.count(req)
         res.render('base',{data: this.config})
     }
 
