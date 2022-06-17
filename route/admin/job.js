@@ -27,4 +27,12 @@ jobRoute.get('/edit/:id',async (req,res,next)=>{
     }
 })
 
+jobRoute.post('/edit/:id',async (req,res,next)=>{
+    if(req.session.user){
+        job.updateItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default jobRoute

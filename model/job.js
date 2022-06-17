@@ -33,6 +33,24 @@ class Job{
     async getSingleItem(req){
         return await req.mydb.collection('jobs').findOne({id: req.params.id})
     }
+
+    async updateItem(req){
+        const myquery = {id:req.params.id}
+        let newvalue = {$set: {
+            title: req.body.title,
+            content: req.body.content,
+            categories: req.body.categories,
+            payable: req.body.payable,
+            email: req.body.email,
+            website: req.body.website,
+            thumb: req.body.thumb,
+            location: req.body.location,
+            closedate: req.body.closedate,
+        }}
+ 
+        await req.mydb.collection("jobs").updateOne(myquery,newvalue)
+
+    }
 }
 
 export default new Job()

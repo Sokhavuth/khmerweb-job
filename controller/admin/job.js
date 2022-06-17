@@ -1,7 +1,7 @@
 // controller/admin/job.js
 import config from '../../config.js'
 import categories from '../../model/category.js'
-import job from '../../model/job.js'
+import jobDB from '../../model/job.js'
 
 class Job{
     constructor(){
@@ -16,13 +16,13 @@ class Job{
         this.config.type = 'job'
 
         this.config.categories = await categories.getAllItem(req)
-        this.config.items = await job.getItem(req,this.config.maxPosts)
-        this.config.count = await job.count(req)
+        this.config.items = await jobDB.getItem(req,this.config.maxPosts)
+        this.config.count = await jobDB.count(req)
         res.render('base',{data: this.config})
     }
 
     async postItem(req,res){
-        await job.insertItem(req)
+        await jobDB.insertItem(req)
 
         res.redirect('/admin/job')
     }
@@ -33,12 +33,19 @@ class Job{
         this.config.type = 'job'
 
         this.config.categories = await categories.getAllItem(req)
-        this.config.items = await job.getItem(req,this.config.maxPosts)
-        this.config.count = await job.count(req)
-        this.config.item = await job.getSingleItem(req)
-        
+        this.config.items = await jobDB.getItem(req,this.config.maxPosts)
+        this.config.count = await jobDB.count(req)
+        this.config.item = await jobDB.getSingleItem(req)
+
         res.render('base',{data: this.config})
     }
+
+    async updateItem(req,res){
+        await jobDB.updateItem(req)
+
+        res.redirect('/admin/job')
+    }
+
 }
 
 export default await new Job()

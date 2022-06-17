@@ -22,9 +22,10 @@
             <input type="text" value="<%= data.item.thumb %>" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
             <input type="text" value="<%= data.item.location %>" name="location" required placeholder="ទីកន្លែង" />
             <input type="datetime-local" value="<%= data.item.closedate %>" name="closedate" required />
-            <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
+            <input type="submit" value="​​​​​​​​​​​​​ចុះ​ផ្សាយ" />
         </div>
     </form>
+    <% delete data.item %>
     <% }else{ %>
         <form action="/admin/job" method="post">
             <input type="text" name="title" required placeholder="ចំណង​ជើង" />
@@ -43,7 +44,7 @@
                 <input type="text" name="thumb" required placeholder="តំណរភ្ជាប់​រូប​តំណាង"/>
                 <input type="text" name="location" required placeholder="ទីកន្លែង" />
                 <input type="datetime-local" name="closedate" required />
-                <input type="submit" value="​​​​​​​​​​​​​បញ្ជូន" />
+                <input type="submit" value="​​​​​​​​​​​​​ចុះ​ផ្សាយ" />
             </div>
         </form>
     <% } %>
