@@ -30,8 +30,7 @@ const _upload = multer({storage: storage})
 
 uploadRoute.post('/',_upload.single("uploadFile"),async function(req,res,next){
     if(req.session.user){
-        const module = await import('../../controllers/admin/upload/read.js')
-        module.default(req,res,next)
+        upload.postItem(req,res)
     }else{
         res.redirect('/admin/login')
     }
