@@ -1,0 +1,22 @@
+<!--views/admin/post.ejs-->
+<link rel='stylesheet' href='/styles/admin/user.css' />
+<script src="/scripts/ckeditor/ckeditor.js"></script>
+
+<section class="User">
+<form action='/admin/user' method='post' >
+    <input type='text' name='title' placeholder='ឈ្មោះ​អ្នក​ប្រើប្រាស់' required />
+    <textarea name="content" id="editor" ></textarea>
+    <div class='wrapper'>
+        <input type='text' name='thumb' required placeholder="តំណរ​ភ្ជាប់​រូប​តំណាង" />
+        <input type='datetime-local' value='' name='datetime' required />
+        <select name='category'>
+            <option>Author</option>
+            <option>Admin</option>
+        </select>
+        <input type="email" name="email" required placeholder="Email" />
+        <input type="password" name="password" required />
+        <input type='submit' value='ចុះ​ផ្សាយ' />
+    </div>
+</form>
+</section>
+<script src="/scripts/ckeditor/config.js"></script>

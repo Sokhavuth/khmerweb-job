@@ -1,0 +1,16 @@
+/* static/styles/user.css */
+.User input, .User select{
+    width: 100%;
+    font: var(--body-font);
+    padding: 2px 10px;
+}
+
+.User form .ck-editor__editable{
+    min-height: 300px;
+    color: black;
+}
+
+.User form .wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

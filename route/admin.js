@@ -11,4 +11,7 @@ adminRoute.use('/category',categoryRoute)
 import uploadRoute from './admin/upload.js'
 adminRoute.use('/upload',uploadRoute)
 
+import userRoute from './admin/user.js'
+adminRoute.use('/user',userRoute)
+
 export default adminRoute
