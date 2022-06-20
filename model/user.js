@@ -23,6 +23,10 @@ class User{
  
         await req.mydb.collection("users").insertOne(newUser)
     }
+
+    async getItem(req,amount){
+        return await req.mydb.collection('users').find().sort({date:-1,_id:-1}).limit(amount).toArray()
+    }
 }
 
 export default new User()

@@ -14,6 +14,8 @@ class User{
         this.config.route = '/admin/user'
         this.config.type = 'user'
 
+        this.config.count = await userDB.count(req)
+        this.config.items = await userDB.getItem(req,this.config.maxPosts)
 
         res.render('base',{data:this.config})
     }
