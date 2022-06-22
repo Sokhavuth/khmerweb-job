@@ -5,9 +5,11 @@
 <section class="Header">
     <div class="menu region">
         <div class="logo"><%= data.pageTitle %></div>
-        <form>
+        <form action="/admin/search" method="post">
             <select name="adminSearch">
                 <option>ការងារ</option>
+                <option>ជំពូក</option>
+                <option>អ្នក​ប្រើប្រាស់</option>
             </select>
             <input type="text" name="q" required placeholder="Search" />
             <input type="submit" value="ស្វែង​រក" />

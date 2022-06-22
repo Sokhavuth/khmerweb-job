@@ -10,6 +10,7 @@ class User{
     }
 
     async getItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រអ្នក​ប្រើប្រាស់'
         this.config.route = '/admin/user'
         this.config.type = 'user'
@@ -29,6 +30,7 @@ class User{
     }
 
     async getEditItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រកែប្រែអ្នកប្រើប្រាស់'
         this.config.route = '/admin/user'
         this.config.type = 'user'

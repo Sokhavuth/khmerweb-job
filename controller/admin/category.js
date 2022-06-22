@@ -10,6 +10,7 @@ class Category{
     }
 
     async getItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រ​ជំពូក'
         this.config.route = '/admin/category'
         this.config.type = 'category'
@@ -26,6 +27,7 @@ class Category{
     }
 
     async getEditItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រ​កែប្រែជំពូក'
         this.config.route = '/admin/category'
         this.config.type = 'category'

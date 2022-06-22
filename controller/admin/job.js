@@ -11,6 +11,7 @@ class Job{
     }
 
     async getItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រ​ការងារ'
         this.config.route = '/admin/job'
         this.config.type = 'job'
@@ -28,6 +29,7 @@ class Job{
     }
 
     async editItem(req,res){
+        this.config = await config()
         this.config.pageTitle = 'ទំព័រ​កែប្រែការងារ'
         this.config.route = '/admin/job'
         this.config.type = 'job'
