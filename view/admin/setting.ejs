@@ -1,0 +1,30 @@
+<!--views/admin/setting.ejs-->
+<link href="/styles/admin/setting.css" rel="stylesheet"></link>
+
+    <div class='Setting'>
+        <% if(data.item){ %>
+        <form action='/admin/setting/edit/<%= data.item.id %>' method='post' >
+            <a>ឈ្មោះគេហទំព័រ</a><input type='text' value="<%= data.item.siteTitle %>" 
+                name='siteTitle' required />
+            <a>អំពី​គេហទំព័រ</a><input type='text' value="<%= data.item.description %>" 
+                name='description' required />
+            <a>ទិន្នន័យ​ផ្នែក​ក្នុង​</a><input type='text' value="<%= data.item.maxPosts %>" 
+                name='maxPosts' required /> 
+            <a>ទិន្នន័យ​ខាងមុខ</a><input type='text' value="<%= data.item.indexPostLimit %>" 
+                name='indexPostLimit' required /> 
+            <a>ទិន្នន័យ​ជំពូក​មុខ</a><input type='text' value="<%= data.item.categoryPostLimit %>" 
+                name='categoryPostLimit' required /> 
+            <a></a><input type='submit' value='បញ្ជូនទិន្នន័យ' />
+        </form>
+        <% delete data.item %>
+        <% }else{ %>
+        <form action='/admin/setting' method='post' >
+            <a>ឈ្មោះគេហទំព័រ</a><input type='text' value="" name='siteTitle' required />
+            <a>អំពី​គេហទំព័រ</a><input type='text' value="" name='description' required />
+            <a>ទិន្នន័យ​ផ្នែក​​ក្នុង</a><input type='text' value="" name='maxPosts' required /> 
+            <a>ទិន្នន័យខាង​​មុខ​</a><input type='text' value="" name='indexPostLimit' required /> 
+            <a>ទិន្នន័យ​ជំពូក​</a><input type='text' value="" name='categoryPostLimit' required /> 
+            <a></a><input type='submit' value='បញ្ជូនទិន្នន័យ' />
+        </form>
+        <% } %>
+    </div>

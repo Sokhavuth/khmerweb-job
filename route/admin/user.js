@@ -19,4 +19,36 @@ userRoute.post('/',async (req,res)=>{
     }
 })
 
+userRoute.get('/edit/:id',async (req,res)=>{
+    if(req.session.user){
+        user.getEditItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
+userRoute.post('/edit/:id',async (req,res)=>{
+    if(req.session.user){
+        user.updateItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
+userRoute.get('/delete/:id',async (req,res)=>{
+    if(req.session.user){
+        user.deleteItem(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
+userRoute.post('/paginate',async (req,res)=>{
+    if(req.session.user){
+        user.paginate(req,res)
+    }else{
+        res.redirect('/login')
+    }
+})
+
 export default userRoute

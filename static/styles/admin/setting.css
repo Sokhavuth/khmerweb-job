@@ -1,0 +1,23 @@
+/* static/styles/admin/setting.css */
+.Setting form{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-gap: 5px;
+    align-items: center;
+}
+ 
+.Setting form input{
+    
+}
+ 
+.Setting form input[type=submit],
+.Setting form input{
+    font: var(--body-font);
+    padding: 5px 10px;
+}
+ 
+.Setting form a{
+    text-align: right;
+    color: white;
+}

@@ -14,4 +14,7 @@ adminRoute.use('/upload',uploadRoute)
 import userRoute from './admin/user.js'
 adminRoute.use('/user',userRoute)
 
+import settingRoute from './admin/setting.js'
+adminRoute.use('/setting',settingRoute)
+
 export default adminRoute

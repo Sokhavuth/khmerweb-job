@@ -6,7 +6,7 @@ function paginate(route){
     $('.paginate img').attr('src', '/images/loading.gif')
     page += 1
     
-    $.post(`${route}/paginate/`,{page:page},function(data, status){
+    $.post(`${route}/paginate`,{page:page},function(data, status){
         appendItem(data.items,route,data)
     })
 }
@@ -22,7 +22,7 @@ function appendItem(items, route,data){
                 html += `</div>`
                 html += `<div class="title">`
                     html += `<a href="/${data.type}/${item.id}">${item.title}</a>`
-                    html += `<div>${new Date(item.date).toLocaleDateString('it-IT')}</div>`
+                    html += `<div>${new Date(item.postdate).toLocaleDateString('it-IT')}</div>`
                 html += `</div>`
                 html += `<div class="edit">`
                     html += `<a href="${route}/edit/${item.id}"><img src="/images/edit.png"/></a>`
@@ -34,9 +34,9 @@ function appendItem(items, route,data){
     $('.list').append(html)
 
     if(route === '/admin/user'){
-        $('.Listing .list li').css({'grid-template-columns':'13% auto 25%'})
-        $('.Listing .list li .thumb').css({'padding-top':'100%'})
-        $('.Listing .list li .thumb img').css({'border-radius':'50%'})
+        $('.Footer .list li').css({'grid-template-columns':'13% auto 25%'})
+        $('.Footer .list li .thumb').css({'padding-top':'100%'})
+        $('.Footer .list li .thumb img').css({'border-radius':'50%'})
     }
 
     $('.paginate img').attr('src', '/images/load-more.png')

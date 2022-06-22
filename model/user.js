@@ -15,7 +15,7 @@ class User{
             title: req.body.title,
             content: req.body.content,
             thumb: req.body.thumb,
-            date: req.body.datetime,
+            postdate: req.body.datetime,
             role: req.body.category,
             email: req.body.email,
             password: hashPassword,
@@ -26,6 +26,42 @@ class User{
 
     async getItem(req,amount){
         return await req.mydb.collection('users').find().sort({date:-1,_id:-1}).limit(amount).toArray()
+    }
+
+    async getSingle(req){
+        return await req.mydb.collection('users').findOne({id:req.params.id})
+    }
+
+    async updateItem(req){
+        const myquery = {id: req.params.id}
+
+        if(req.session.user.password !== req.body.password){
+            var hashPassword = bcrypt.hashSync(req.body.password, 12)
+        }else{
+            var hashPassword = req.body.password
+        }
+
+        let newvalue = {$set: {
+            title: req.body.title,
+            content: req.body.content,
+            thumb: req.body.thumb,
+            postdate: req.body.datetime,
+            role: req.body.category,
+            email: req.body.email,
+            password: hashPassword,
+        }}
+
+        await req.mydb.collection('users').updateOne(myquery,newvalue)
+    }
+
+    async deleteItem(req){
+        await req.mydb.collection('users').deleteOne({id: req.params.id})
+    }
+
+    async paginate(req,amount){
+        const page = req.body.page
+
+        return await req.mydb.collection('users').find().sort({date:-1,_id:-1}).skip(amount*page).limit(amount).toArray()
     }
 }
 
